@@ -29,8 +29,12 @@ find_package(rclcpp_lifecycle REQUIRED)
 # Find openarm_can library
 find_package(OpenArmCAN REQUIRED)
 
+# Find SafeMRC library (CONFIG mode, same style as OpenArmCAN)
+find_package(safe_mrc_device CONFIG REQUIRED)
+
 add_library(${PROJECT_NAME} SHARED
   src/v10_simple_hardware.cpp
+  src/v10_safemrc_hardware.cpp
 )
 
 target_include_directories(
@@ -41,6 +45,7 @@ target_include_directories(
 
 target_link_libraries(${PROJECT_NAME}
   OpenArmCAN::openarm_can
+  safe_mrc_device::safe_mrc_device
 )
 
 ament_target_dependencies(${PROJECT_NAME}
@@ -59,6 +64,11 @@ install(
 
 install(DIRECTORY include/
 DESTINATION include
+)
+
+# Install hardware config (YAML)
+install(DIRECTORY config/
+  DESTINATION share/${PROJECT_NAME}/config
 )
 
 ament_export_include_directories(

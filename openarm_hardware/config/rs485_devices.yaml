@@ -1,0 +1,10 @@
+rs485_bus:
+  port_id: "usb-FTDI_USB__-__Serial_Converter_FT9DZQZX-if00-port0"
+  baudrate: 4000000
+  devices:
+    - id: 1
+      type: "ROTARY96"
+      joint: "joint2"
+    - id: 2
+      type: "ROTARY96"
+      joint: "joint4"

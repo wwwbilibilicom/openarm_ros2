@@ -22,4 +22,11 @@
       ros2_control hardware interface for OpenArm V10.
     </description>
   </class>
+  <class name="openarm_hardware/OpenArm_v10SafeMRCHW"
+         type="openarm_hardware::OpenArm_v10SafeMRCHW"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      ros2_control hardware interface for OpenArm V10 with SafeMRC RS485.
+    </description>
+  </class>
 </library>
