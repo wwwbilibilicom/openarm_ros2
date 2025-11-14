@@ -8,12 +8,7 @@
 
 namespace openarm_hardware {
 
-OpenArm_v10SafeMRCHW::OpenArm_v10SafeMRCHW() {
-  // Default SafeMRC device entries: joint2, joint4
-  mrc_ids_ = {0x01, 0x02};
-  mrc_types_ = {safe_mrc::MRCType::ROTARY96, safe_mrc::MRCType::ROTARY96};
-  joint_mappings_ = {"joint2", "joint4"};
-}
+OpenArm_v10SafeMRCHW::OpenArm_v10SafeMRCHW() = default;
 
 hardware_interface::CallbackReturn OpenArm_v10SafeMRCHW::on_init(
     const hardware_interface::HardwareInfo& info) {
